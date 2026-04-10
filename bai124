@@ -1,0 +1,28 @@
+import tkinter as tk
+
+def itos(n):
+    return str(n)
+
+def stoi(s):
+    return int(s)
+
+def convert():
+    x = entry.get()
+    try:
+        result.config(text=f"itos: '{itos(int(x))}' | stoi: {stoi(x)}")
+    except:
+        result.config(text="Lỗi dữ liệu")
+
+root = tk.Tk()
+root.title("BÀI LÀM CỦA QUANG HUY - BÀI 124")
+
+entry = tk.Entry(root)
+entry.pack(pady=10)
+
+tk.Button(root, text="Chuyển", command=convert).pack()
+
+result = tk.Label(root, text="")
+result.pack(pady=10)
+root.geometry("400x200")
+
+root.mainloop()
